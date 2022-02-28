@@ -3,10 +3,7 @@
  */
 package ml.olihock;
 
-import org.tensorflow.ConcreteFunction;
-import org.tensorflow.Signature;
-import org.tensorflow.Tensor;
-import org.tensorflow.TensorFlow;
+import org.tensorflow.*;
 import org.tensorflow.op.Ops;
 import org.tensorflow.op.core.Placeholder;
 import org.tensorflow.op.math.Add;
@@ -22,6 +19,8 @@ public class HelloTensorFlow {
              Tensor dblX = dbl.call(x)) {
             System.out.println(x.getInt() + " doubled is " + ((TInt32)dblX).getInt());
         }
+
+        Graph graph = new Graph();
     }
 
     private static Signature dbl(Ops tf) {
